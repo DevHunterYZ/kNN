@@ -17,3 +17,4 @@ b = np.array([[ 0.        ,  1.        ],
        [ 0.        ,  1.        ],
        [ 0.        ,  1.        ],
        [ 0.        ,  1.41421356]])
+nbrs.kneighbors_graph(X).toarray()
