@@ -1,4 +1,8 @@
 import numpy as np
 import pandas as pd
-from sklearn import datasets
-dataset = datasets.load_iris()
+dataset = pd.read_csv('C:/Users/user/Desktop/Iris.csv')
+dataset.shape
+dataset.head(20)
+feature_columns = ['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm','PetalWidthCm']
+X = dataset[feature_columns].values
+y = dataset['Species'].values
