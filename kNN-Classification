@@ -17,4 +17,22 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 plt.figure()
 sns.pairplot(dataset.drop("Id", axis=1), hue = "Species", size=3, markers=["o", "s", "D"])
 plt.show()
+#making predictions 
+# Eğitim setiyle sınıflandırıcı eğitilir.
+# Kütüphaneleri yükle
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.model_selection import cross_val_score
+
+# Öğrenme modeli (k = 3)
+classifier = KNeighborsClassifier(n_neighbors=3)
+
+# Modeli eğit.
+classifier.fit(X_train, y_train)
+
+# Test seti sonuçlarını tahmin et.
+y_pred = classifier.predict(X_test)
+cm = confusion_matrix(y_test, y_pred)
+cm
+
 
